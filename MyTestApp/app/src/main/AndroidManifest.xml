@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="linshaoyou.meizu.com.mytestapp">
+
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 外部存储读权限，调试工具加载本地补丁需要 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name=".MyApplication">
+
+        <!--下面3个是sophix热更新相关，需要在sophix官网上申请相关-->
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="24600467-1" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="977b9bac2cf7409ec5e0e834049a054b" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCNpojCSvreD/UzxxaSSiHeo76FABwWZTkhb8SOMfilpKiRqwpAMoL4MUlWzHIoKgJ3jrPOYBQGKyqUt3FfqUGvkP07jVUI492YkcN/fgBWUz88x+vsJ6gWBQeagYNhryNB7hcurHy7eSG114KNGfkWoDezaIEmL0Wxe4hEcXKYiCyxt29loLtaVQeKTGA4jRMyhwe8EkiAPUfKpWPZe41V6BdtVBp1A6eUIdM0yPhpv/Q4vFlowB3o+JX1QVTobmmN6RVQPOEPH2Ir3UVRLVZOOLW7a7F/iqb9jcs0aUaZNeJCfh6HiT6pvCvEOICN1KDoWqhVmnLhVw0lisM8jQlvAgMBAAECggEAUN7LJWH5Z95kd3Mqh8qbG6kQlI5DeuW/gD93UFdnReqD8uZbq9squtgors16P0P8tJVcQm7H/92VKeKxb5QKVFnKub0u1yyAzyIpIxikyKQubl0VbHYXmLq2ZJeckqCS2Ik94v/HFqFJha/McRJrC2fdZSg807gZagLFAY5jhoEaDg3BrCtcowJygOn/unnICfTrBHNT3b2XDgNITaN1kaNZZ8qR6l8jovj6v5EWdgC8mfKVx6J3vmeHAY6WJilKsxm0/AHrjKvrGvno/wi9DHEPIOGKQ/73wIvpWn/OVqpesPjdKGV51pNHt6Dr74BFTE8B/caSrQI4s6KPQuKlwQKBgQDqtMab3LElJ1kkuPU75zcV9v/BJblZze9L7/yyT7rbDf+S2dNflsCOZWFU07HvLQtJ2Dg2U5MMJVygi9QRKKo0FjX57VRTLWrEhkKFRqIwwPkqFlYwvFodcUIJ1K67X35gKW7I8SGZj3UkkVZKhhuUKAiADt6bDzzXmnnOf9zrHQKBgQCagHj02x1lKrmeJ+bfwfjdu9msjQ25Gkr+yQSbTxrTFmuy+ISoxYOlSszFJir5NKo/dZhWItu8bL+OAhoRag3EoHKgoRiPiItYr+pPHU5coqm1cykFrZ19rHShTz7HuBjmygY0ysTmUfav/AiqgV9AAet7/VQ5jfo0TIkU4nFU+wKBgQChpP9kOQqH3CG4+Ols6EE4D3T1QVX2U66LTi1rYR3/4BQ0v3CkVN8pMwllsqbJYuxzX0bXo5eSteilaagUaT1PwjxKdPmuj4kI8K6/u3XYvg7cvaV+yzoFLQueWaw9v/b5o495NRk++V5kYPRdPx+fWjMAfz0w7b2pf+qEHeu4wQKBgEJ1pxI0uvVMpqHIqkBwMPw4lQ7rcg7Ap6fnkmq4YWKRz2wiCPaMV++fOGxJ2cxvAhjgHdJXlkv8P333m30IMLn3Brff9C+x3bcdnN3BTnb8paHe0rOVlhx8NYM6ElhY8aU9G+RToNUuRr423QdzNSTUbpZcR4GmeA1NKt5n9bZHAoGADvRMdU71Ny8N/ySdApp4Akemhk/iYGcpqfHs+qEHyQctjs7lsYs+KYnv0fwfn9xJJnZckog+IXcobEH/n0as0nKbxZeFj6kvk1hgIR62x9xoIYbvM4fy5pxAwntNbwUpNJJqOaL8auUN1uuwWMv0iLaNnd6YVGMN7D2WMlNJ/P8=" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

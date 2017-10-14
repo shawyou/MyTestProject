@@ -1,0 +1,61 @@
+repositories {
+    maven {
+        url "http://maven.aliyun.com/nexus/content/repositories/releases"
+    }
+    mavenCentral()
+}
+
+apply plugin: 'com.android.application'
+//kotlin需要
+apply plugin: 'kotlin-android'
+//butterknife注解框架需要
+//apply plugin: 'android-apt'
+apply plugin: 'kotlin-kapt'
+
+android {
+    signingConfigs {
+        //签名信息需要自己实现
+        releaseConfig {
+            keyAlias 'PassWord_123456'
+            keyPassword '123456'
+            storeFile file('/Users/linshaoyou/work/AppSign_PassWord_123456')
+            storePassword '123456'
+        }
+    }
+    compileSdkVersion 22
+    buildToolsVersion '25.0.0'
+    defaultConfig {
+        applicationId "linshaoyou.meizu.com.mytestapp"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile('com.android.support:appcompat-v7:22.2.0')
+    //热更新插件
+    compile('com.aliyun.ams:alicloud-android-hotfix:3.1.0')
+
+
+    //kotlin相关
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version")
+    compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
+
+    //butterknife相关
+    compile("com.jakewharton:butterknife:$butterknife_version") {
+        exclude group: "com.android.support", module: "support-compat"
+    }
+    kapt "com.jakewharton:butterknife-compiler:$butterknife_version"
+}
