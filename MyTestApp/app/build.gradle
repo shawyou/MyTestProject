@@ -22,14 +22,15 @@ android {
             storePassword '123456'
         }
     }
-    compileSdkVersion 22
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "linshaoyou.meizu.com.mytestapp"
-        minSdkVersion 15
-        targetSdkVersion 22
+        minSdkVersion 23
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -39,12 +40,16 @@ android {
             signingConfig signingConfigs.releaseConfig
         }
     }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
 }
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile('com.android.support:appcompat-v7:22.2.0')
+    compile('com.android.support:appcompat-v7:26.1.0')
     //热更新插件
     compile('com.aliyun.ams:alicloud-android-hotfix:3.1.0')
 
@@ -58,4 +63,13 @@ dependencies {
         exclude group: "com.android.support", module: "support-compat"
     }
     kapt "com.jakewharton:butterknife-compiler:$butterknife_version"
+
+    //悬浮按钮FloatingActionButton
+    compile 'com.android.support:design:26.1.0'
+
+    //约束布局
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    //multiDex
+    compile 'com.android.support:multidex:1.0.2'
 }

@@ -2,6 +2,7 @@ package linshaoyou.meizu.com.mytestapp
 
 import android.app.Application
 import android.content.Context
+import android.support.multidex.MultiDexApplication
 import android.util.Log
 import com.taobao.sophix.PatchStatus
 import com.taobao.sophix.SophixManager
@@ -11,7 +12,7 @@ import com.taobao.sophix.listener.PatchLoadStatusListener
 /**
  * Created by linshaoyou on 17/8/26.
  */
-class MyApplication : Application(){
+class MyApplication : MultiDexApplication(){
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
