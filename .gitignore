@@ -40,6 +40,8 @@ proguard/
 *.idea/dictionaries
 *.idea/libraries
 *.idea/*
+./MyTestApp/.idea
+./MyTestApp/.idea/
 
 # Keystore files
 *.jks
