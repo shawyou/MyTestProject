@@ -33,6 +33,7 @@ proguard/
 *captures/
 
 # Intellij
+MyTestApp/.idea/
 *.iml
 *.idea/workspace.xml
 *.idea/tasks.xml
@@ -40,8 +41,7 @@ proguard/
 *.idea/dictionaries
 *.idea/libraries
 *.idea/*
-./MyTestApp/.idea
-./MyTestApp/.idea/
+
 
 # Keystore files
 *.jks
