@@ -8,6 +8,9 @@ import com.taobao.sophix.PatchStatus
 import com.taobao.sophix.SophixManager
 import com.taobao.sophix.SophixManager.*
 import com.taobao.sophix.listener.PatchLoadStatusListener
+import com.taobao.weex.InitConfig
+import com.taobao.weex.WXSDKEngine
+import linshaoyou.meizu.com.mytestapp.weex.WXImageLoaderAdapter
 
 /**
  * Created by linshaoyou on 17/8/26.
@@ -43,7 +46,24 @@ class MyApplication : MultiDexApplication(){
     override fun onCreate() {
         super.onCreate()
         Log.e("LSY", "MyApplication onCreate")
+        initial()
+    }
+
+    private fun initial() {
+        initSophix()
+        initWeex()
+    }
+
+    private fun initSophix() {
         // queryAndLoadNewPatch不可放在attachBaseContext 中，否则无网络权限，建议放在后面任意时刻，如onCreate中
         SophixManager.getInstance().queryAndLoadNewPatch()
+    }
+
+    private fun initWeex() {
+        var initConfig = InitConfig
+                .Builder()
+                .setImgAdapter(WXImageLoaderAdapter())
+                .build()
+        WXSDKEngine.initialize(this,initConfig)
     }
 }

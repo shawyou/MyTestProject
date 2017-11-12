@@ -38,6 +38,7 @@
 
         <activity android:name=".singleFragment.SingleFragmentActivity"/>
         <activity android:name=".moreFragment.MoreFragmentActivity"/>
+        <activity android:name=".weex.WXActivity"/>
     </application>
 
 </manifest>

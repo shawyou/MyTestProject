@@ -9,6 +9,7 @@ import butterknife.ButterKnife
 import butterknife.OnClick
 import linshaoyou.meizu.com.mytestapp.moreFragment.MoreFragmentActivity
 import linshaoyou.meizu.com.mytestapp.singleFragment.SingleFragmentActivity
+import linshaoyou.meizu.com.mytestapp.weex.WXActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +34,12 @@ class MainActivity : AppCompatActivity() {
     @OnClick(R.id.moreFragmentButton)
     fun turnToMoreActivity(){
         var intent = Intent(this, MoreFragmentActivity::class.java)
+        startActivity(intent)
+    }
+
+    @OnClick(R.id.weex_activity)
+    fun turnToWeexActivity(){
+        var intent = Intent(this, WXActivity::class.java)
         startActivity(intent)
     }
 }
