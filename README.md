@@ -17,3 +17,7 @@
 7.单个Fragment的Activity
 
 8.多个Fragment的Activity
+
+9.使用recyclerview
+
+10.使用weex技术
